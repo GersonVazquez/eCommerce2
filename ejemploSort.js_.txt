@@ -1,0 +1,11 @@
+var lista1 = [5,8,80,9,-4];
+var lista2 = ["banana","manzana","Mandarina","Frutilla","kiwi"];
+
+
+
+//escribir una funcion que ordene las listas numericas en orden ascendente
+//escribir una funcion que ordene las listas numericas en orden descendente
+
+//probar en un html desplegando el resultado dentro de un div y un li recorriendo la lista con un for
+
+
