@@ -2,19 +2,19 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-    getJSONData(PRODUCT_INFO_URL).then( res =>{
-        let producto = res.data;
-        
+  getJSONData(PRODUCT_INFO_URL).then(res => {
+    let producto = res.data;
 
-        showProdInfo(producto);
-        showRelatedProducts(producto.relatedProducts)
-    })
+
+    showProdInfo(producto);
+    showRelatedProducts(producto.relatedProducts)
+  })
 
 });
 
-function showProdInfo(producto){
-    const prodInfo = document.getElementById("prodInfo");
-    let htmlToAppend = `
+function showProdInfo(producto) {
+  const prodInfo = document.getElementById("prodInfo");
+  let htmlToAppend = `
     
     <div class="card p-2 bd-highlight" style="width: 450px;">
     <img src="${producto.images[0]}" class="card-img-top" alt="">
@@ -63,36 +63,72 @@ function showProdInfo(producto){
     </div>
     </div>
     `;
-    prodInfo.innerHTML = htmlToAppend;
+  prodInfo.innerHTML = htmlToAppend;
 }
 
 function showRelatedProducts(array) {
   getJSONData(PRODUCTS_URL).then(function (resultObj) {
-      if (resultObj.status === "ok") {
-          productsList = resultObj.data;
+    if (resultObj.status === "ok") {
+      productsList = resultObj.data;
 
-          let htmlRelatedProducts = "";
+      let htmlRelatedProducts = "";
 
-          for (let i = 0; i < array.length; i++) {
-              let rcomment = array[i];
-              let relatedProducts = productsList[rcomment];
+      for (let i = 0; i < array.length; i++) {
+        let comment = array[i];
+        let relatedProducts = productsList[comment];
 
-              htmlRelatedProducts += `
+        htmlRelatedProducts += `
               <div class= "col-lg-3 col-md-4 col-6 border">
               
-                  <div id="relatedVideogameImg" class= "row">
-                      <img class="img-fluid p-2" src="`+ relatedProducts.imgSrc +`">                                              
+                  <div class= "row">
+                      <img class="img-fluid p-2" src="` + relatedProducts.imgSrc + `">                                              
                   </div>                   
-                  <div "relatedVideogameInfo" class= "row p-2">
-                  <p>`+ relatedProducts.name + `</p> 
-                  <p>`+ relatedProducts.description + `</p>
+                  <div class= "row p-2">
+                  <p>` + relatedProducts.name + `</p> 
+                  <p>` + relatedProducts.description + `</p>
                   </div>
                   <div class= "row p-2">
-                  <a href="videogames-info.html">Ver</a>
+                  <a href="#">Ver</a>
                   </div>                     
               </div>`
-          }
-          document.getElementById("relatedProducts").innerHTML = htmlRelatedProducts;
       }
+      document.getElementById("relatedProducts").innerHTML = htmlRelatedProducts;
+    }
   })
 }
+
+getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
+  if (resultObj.status === "ok") {
+    let comments = resultObj.data;
+
+    let html = '';
+    comments.forEach(function(comment) {
+      let productScore = comments.score;
+      let score = '';
+      for (let i = 1; i <= productScore; i++) {
+        score += '<i class="far fa-star checked"></i>';
+      }
+
+      for (let i = productScore + 1; i <= 5; i++) {
+        score += '<i class="far fa-star"></i>';
+      }
+
+
+      html += `
+      <li class="media">
+        <div class="media-body">
+          <label class="mt-0"><strong> ${comment.user}</strong>
+            <span class="mute"> ${comment.dateTime}</span>
+            <span> ${score}</span>
+          </label>
+          <br>
+          <label class="small">${comment.description}</label>
+        </div>
+      </li>
+      `
+    });
+  
+    document.getElementById("infoComments").innerHTML = html;
+
+    }
+});

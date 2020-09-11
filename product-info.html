@@ -27,12 +27,43 @@
     </div>
   </nav>
 
- <div class="container p-5" id="prodInfo"></div>
-<hr>
- <div class="container p-5 row text-center text-lg-left pt-2 " id="relatedProducts"></div>
+  <div class="container p-5" id="prodInfo"></div>
+  <hr>
+  <div class="title">
+    <h2>Productos Relacionados</h2>
+  </div>
+  <div class="container p-5 row text-center text-lg-left pt-2 " id="relatedProducts"></div>
+  <hr>
+  
+  <dt>Comentarios</dt>
+  <dd>
+    <ul id="infoComments" class="p-0"></ul>
+  </dd>
+  
+  <hr>
 
- <div class="container p-5" id="infoComments"></div><!--Falta-->
+  <div class="columnas-10 formulario-contacto">
+    <h2>Dejanos tu comentario!</h2>
+    <form action="#">
+        <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Tu Nombre">
+        </div>
+        <div class="campo">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" placeholder="Tu Correo Electrónico">
+        </div>
+        <div>
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje"></textarea>
+        </div>
+        <div class="campo enviar">
+            <input type="submit" value="Enviar" class="btn btn-primario">
+        </div>
+    </form>
+</div>
 
+  
 
   <footer class="text-muted">
     <div class="container">
