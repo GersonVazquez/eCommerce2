@@ -177,3 +177,9 @@ input[type="submit"]:active {
   text-align: left;
 }
 
+.payment-method {
+  max-width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
