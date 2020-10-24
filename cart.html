@@ -84,7 +84,7 @@
           <th scope="col">Subtotal</th>
         </tr>
       </thead>
-    <tbody id="articlesWrapper">
+      <tbody id="articlesWrapper">
 
       </tbody>
     </table>
@@ -103,26 +103,53 @@
     </div>
   </div>
 
+  <!-- direccion de envio -->
+  <div class="container-5" id="envio">
+    <h4>Direccion de Envio</h4>
+    <form action="#">
+      <p>Calle 1:<input type="text" name="calle1" size="20"></p>
+      <p>Calle 2:<input type="text" name="calle2" size="20"></p>
+
+      <p>Numero de Puerta<input type="number" name="nacido" min="1900"></p>
+      <div class="container">
+        <input type="radio" name="house" value="casa"> Casa
+        <input type="radio" name="apartment" value="apto"> Apartamento
+      </div>
+      <p>Numero Apartamento<input type="text" name="calle2" size="20"></p>
+    </form>
+  </div>
+
+
+  <!-- Envio y costos -->
+  <div class="container-5">
+    
+  </div>
+
+  <!-- Boton para acceder al modal -->
   <div class="container">
     <button class="btn btn-primary" data-toggle="modal" data-target="#ventanaModal">
       Metodo de Pago
     </button>
   </div>
 
-  <div class="modal fade" id="ventanaModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
+  <!-- Modal -->
+  <div class="modal fade" id="ventanaModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
 
         <!-- Encabezado del Modal -->
         <div class="modal-header">
           <h5 class="modal-title" id="tituloVentana">Metodos de Pago</h5>
-          <button class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+          <button class="close" data-dismiss="modal" aria-label="Cerrar"><span
+              aria-hidden="true">&times;</span></button>
         </div>
 
         <!-- Cuerpo del Modal -->
         <div class="modal-body">
+
           <!-- Formulario -->
-          <form> 
+          <form>
             <!-- Datos del Usuario -->
             <div class="form-group">
               <label for="nombre">Nombre</label>
@@ -130,7 +157,7 @@
             </div>
             <div class="form-group">
               <label for="direccionEmail">Email</label>
-              <input type="email" class="form-control" id="direccionEmail" placeholder="Introduzca su Email" >
+              <input type="email" class="form-control" id="direccionEmail" placeholder="Introduzca su Email">
             </div>
 
             <!-- seleccionar el metodo -->
@@ -149,42 +176,52 @@
             <div class="datos-tarjeta">
               <div class="form-group">
                 <label for="numTarjeta">Numero de Tarjeta</label>
-                <input type="text" class="form-control" id="numTarjeta" placeholder="Introduzca el número de su Tarjeta">
+                <input type="text" class="form-control" id="numTarjeta"
+                  placeholder="Introduzca el número de su Tarjeta">
               </div>
               <div class="form-group">
-                <label for="Codigo de Seguridad">Codigo de Seguridad</label>
-                <input type="text" class="form-control" id="Codigo de Seguridad" placeholder="Introduzca el codigo de seguridad">
+                <label for="securityNum">Codigo de Seguridad</label>
+                <input type="text" class="form-control" id="securityNum"
+                  placeholder="Introduzca el codigo de seguridad">
+              </div>
+              <div class="form-group">
+                <label for="securityNum">Vencimiento de la tarjeta: </label>
+                <input type="text" class="form-control" id="securityNum"
+                  placeholder="XX/XX">
               </div>
             </div>
+            
+            
 
-        <!-- Pie del Modal -->
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
-          <button class="btn btn-primary" type="button">Pagar</button>
+            <!-- Pie del Modal -->
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
+              <button class="btn btn-primary" type="button">Pagar</button>
+            </div>
+            <!-- al momento de dar en el boton pagar, pedir contraseña de la cuenta ecommerce -->
         </div>
       </div>
     </div>
-  </div>
 
 
 
 
 
 
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/fName.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/fName.js"></script>
 </body>
 
 </html>
