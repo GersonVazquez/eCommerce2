@@ -51,6 +51,7 @@
         </li>
       </ul>
     </div>
+
     <div>
       <ul class="navbar-nav">
         <div class="nav-item dropdown ">
@@ -67,14 +68,54 @@
       </ul>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <div class="container">
+    <h2>Mi Perfil</h2><br>
+
+    <div class="form-row">
+
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="nombres">Nombres:</label>
+        <input id="nombre" class="form-control" type="text" placeholder="Ingresa tu nombre completo" name="nombre">
+      </div>
+
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="apellido">Apellidos:</label>
+        <input id="apellido" class="form-control" type="text" placeholder="Ingresa tu apellido completo" name="apellido">
+      </div>
+
     </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="edad">Edad:</label>
+        <input id="edad" class="form-control" type="text"placeholder="Ingresa tu edad" name="edad">
+      </div>
+
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="email">Email:</label>
+        <input id="email" class="form-control" type="email"  placeholder="Ingresa tu email" name="email">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="number">Numero de contacto</label>
+        <input id="number" class="form-control" type="text" placeholder="Ingresa un telefono de contacto" name="numero">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <button class="btn btn-primary center-block" type="submit" onclick= guardarDatos()>Guardar</button>
+      </div>
+    </div>
+    
+    </form> <br>
   </div>
+
+
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
